@@ -3,17 +3,12 @@ import {
   IonAvatar,
   IonButton,
   IonButtons,
-  IonCard,
-  IonCardContent,
-  IonCardSubtitle,
-  IonCardTitle,
   IonChip,
   IonCol,
   IonContent,
   IonGrid,
   IonHeader,
   IonIcon,
-  IonImg,
   IonLabel,
   IonPage,
   IonRow,
@@ -26,6 +21,8 @@ import "./Home.css"
 import featuredProductApi from "../../api/featured-product.api"
 import { notificationsOutline } from "ionicons/icons"
 import HomeSlider from "../../components/slider/HomeSlider"
+import HomeTagSlider from "../../components/slider/HomeTagSlider"
+import HomeTagProductSlider from "../../components/slider/HomeTagProductSlider"
 
 type HomeState = {
   data: Array<Object>
@@ -98,26 +95,27 @@ class Home extends React.Component<{}, HomeState> {
                 <HomeSlider></HomeSlider>
               </IonCol>
             </IonRow>
-            <IonRow className="ion-justify-content-center ion-padding-horizontal">
-              <IonCol className="ion-text-center">Popular</IonCol>
-              <IonCol className="ion-text-center">Untukmu</IonCol>
-              <IonCol className="ion-text-center">Kopi</IonCol>
-              <IonCol className="ion-text-center">Teh</IonCol>
-              <IonCol className="ion-text-center">Snack</IonCol>
-            </IonRow>
-            <IonRow className="ion-justify-content-start  ion-nowrap ion-padding-horizontal">
-              <IonCol size="6" className="ion-text-center">
-                <IonCard className="rounded shadow ion-text-left">
-                  <IonCardContent>
-                    <IonImg src="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"></IonImg>
-                  </IonCardContent>
-                  <IonCardSubtitle className="ion-padding">
-                    <div>Es Cofee</div>
-                    <div>Rp 21.500</div>
-                  </IonCardSubtitle>
-                </IonCard>
-              </IonCol>
-            </IonRow>
+            <div>
+              <HomeTagSlider></HomeTagSlider>
+            </div>
+            <div>
+              <HomeTagProductSlider></HomeTagProductSlider>
+            </div>
+            <div className="container">
+              <IonRow className="ion-align-items-center">
+                <IonCol size="6">
+                  <b>Terakhir Dibeli</b>
+                </IonCol>
+                <IonCol size="6" className="ion-text-right">
+                  <IonButton size="small" color="secondary" fill="clear">
+                    Lihat Semua
+                  </IonButton>
+                </IonCol>
+              </IonRow>
+            </div>
+            <div>
+              <HomeTagProductSlider></HomeTagProductSlider>
+            </div>
           </IonGrid>
         </IonContent>
       </IonPage>

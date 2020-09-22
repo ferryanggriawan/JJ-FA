@@ -1,48 +1,36 @@
-import { IonCard, IonCardContent, IonSlide, IonSlides } from "@ionic/react"
+import {
+  IonCard,
+  IonCardContent,
+  IonImg,
+  IonSlide,
+  IonSlides,
+} from "@ionic/react"
 import React, { Component } from "react"
+import sliderApi from "../../api/slider.api"
 
-const slideOpts = {
-  initialSlide: 1,
+const imageSlideOpts = {
+  initialSlide: 0,
   speed: 400,
 }
+
+const sliderData = sliderApi
 
 class HomeSlider extends Component {
   render() {
     return (
-      <IonSlides pager={true} options={slideOpts}>
-        <IonSlide>
-          <IonCard className="rounded shadow" style={{ width: "100%" }}>
-            <IonCardContent style={{ height: "175px" }}>
-              <img
-                src="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-                alt="abc"
-                height="100%"
-              />
-            </IonCardContent>
-          </IonCard>
-        </IonSlide>
-        <IonSlide>
-          <IonCard className="rounded shadow" style={{ width: "100%" }}>
-            <IonCardContent style={{ height: "175px" }}>
-              <img
-                src="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-                alt="abc"
-                height="100%"
-              />
-            </IonCardContent>
-          </IonCard>
-        </IonSlide>
-        <IonSlide>
-          <IonCard className="rounded shadow" style={{ width: "100%" }}>
-            <IonCardContent style={{ height: "175px" }}>
-              <img
-                src="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-                alt="abc"
-                height="100%"
-              />
-            </IonCardContent>
-          </IonCard>
-        </IonSlide>
+      <IonSlides className="image-slide" pager={true} options={imageSlideOpts}>
+        {sliderData.map((slide, index) => (
+          <IonSlide key={index}>
+            <IonCard className="rounded shadow" style={{ width: "100%" }}>
+              <IonCardContent
+                class="ion-no-padding"
+                style={{ height: "175px" }}
+              >
+                <IonImg src={slide.img}></IonImg>
+              </IonCardContent>
+            </IonCard>
+          </IonSlide>
+        ))}
       </IonSlides>
     )
   }
