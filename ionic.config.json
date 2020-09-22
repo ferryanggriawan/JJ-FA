@@ -1,0 +1,7 @@
+{
+  "name": "JJ-FA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
