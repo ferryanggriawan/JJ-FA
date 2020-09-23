@@ -1,12 +1,12 @@
 import React, { Component } from "react"
-import { IonButton, IonCol, IonRow, IonSlide, IonSlides } from "@ionic/react"
+import { IonButton, IonSlide, IonSlides, withIonLifeCycle } from "@ionic/react"
 
 class HomeTagSlider extends Component {
   render() {
     const tagSlideOpts = {
       initialSlide: 0,
       slidesPerView: 3,
-      speed: 400,
+      speed: 0,
     }
 
     return (
@@ -46,4 +46,4 @@ class HomeTagSlider extends Component {
   }
 }
 
-export default HomeTagSlider
+export default withIonLifeCycle(HomeTagSlider)

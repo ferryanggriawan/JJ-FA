@@ -31,7 +31,6 @@ import featuredProductApi from "../../api/featured-product.api"
 import HomeSlider from "../../components/slider/HomeSlider"
 import HomeTagSlider from "../../components/slider/HomeTagSlider"
 import HomeTagProductSlider from "../../components/slider/HomeTagProductSlider"
-import ItemProduct from "../../components/item/ItemProduct"
 import ItemProductFavorite from "../../components/item/ItemProductFavorite"
 
 interface HomeState {
@@ -50,7 +49,7 @@ class Home extends React.Component<{}, HomeState> {
     super(p)
     this.state = {
       featuredProduct: [],
-      showModal: true,
+      showModal: false,
     }
   }
 
@@ -116,9 +115,13 @@ class Home extends React.Component<{}, HomeState> {
                 <HomeSlider></HomeSlider>
               </IonCol>
             </IonRow>
-            <div>
-              <HomeTagSlider></HomeTagSlider>
-            </div>
+            <IonGrid>
+              <IonRow className="ion-justify-content-center">
+                <IonCol size="12">
+                  <HomeTagSlider></HomeTagSlider>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
             <div>
               <HomeTagProductSlider
                 products={featuredProduct}

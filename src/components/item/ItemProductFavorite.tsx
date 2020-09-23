@@ -6,7 +6,7 @@ import {
   IonLabel,
   IonText,
 } from "@ionic/react"
-import { addOutline, heartOutline } from "ionicons/icons"
+import { heartOutline } from "ionicons/icons"
 import React, { Component } from "react"
 
 class ItemProductFavorite extends Component {

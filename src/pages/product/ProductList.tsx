@@ -1,25 +1,18 @@
 import React from "react"
 import {
-  IonAvatar,
   IonButton,
   IonCol,
   IonContent,
   IonGrid,
   IonHeader,
-  IonIcon,
-  IonImg,
-  IonItem,
-  IonLabel,
   IonList,
   IonListHeader,
   IonPage,
   IonRow,
   IonText,
-  IonTitle,
   IonToolbar,
 } from "@ionic/react"
 import "./ProductList.css"
-import { addOutline, heartOutline } from "ionicons/icons"
 import ItemProduct from "../../components/item/ItemProduct"
 
 const ProductList: React.FC = () => {
