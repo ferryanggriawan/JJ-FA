@@ -16,6 +16,7 @@ type ItemCardProps = {
   image: string
   name: string
   harga: string
+  onClickAdd: Function
 }
 
 class ItemCard extends Component<ItemCardProps> {
@@ -54,6 +55,7 @@ class ItemCard extends Component<ItemCardProps> {
                 size="small"
                 color="dark"
                 fill="solid"
+                onClick={() => this.props.onClickAdd()}
               >
                 <IonIcon icon={addOutline}></IonIcon>
               </IonButton>

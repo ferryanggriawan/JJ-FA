@@ -110,3 +110,45 @@ ion-button {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.modal-absolute .modal-wrapper {
+  position: absolute;
+  height: calc(100vh - 60px);
+  top: 60px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.ma-1 {
+  margin: 5px;
+}
+
+.minus-modal-content {
+  margin-top: -20px;
+}
+
+.modal-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+ion-item {
+  --min-height: 16px;
+}
+
+ion-input {
+  border: 1px solid #979797;
+  border-radius: 10px;
+}
+
+ion-input input {
+  padding-left: 20px !important;
+}

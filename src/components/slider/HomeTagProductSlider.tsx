@@ -10,6 +10,7 @@ interface Product {
 
 type HomeTagProductSliderProps = {
   products: Array<Product>
+  onClickAdd: Function
 }
 
 class HomeTagProductSlider extends Component<HomeTagProductSliderProps> {
@@ -31,6 +32,9 @@ class HomeTagProductSlider extends Component<HomeTagProductSliderProps> {
                 image={product.img}
                 name={product.name}
                 harga={`Rp ${product.price}`}
+                onClickAdd={() => {
+                  this.props.onClickAdd(product)
+                }}
               ></ItemCard>
             </IonSlide>
           ))}
