@@ -101,3 +101,12 @@ ion-button {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.rounded-button {
+  border-radius: 50px;
+}
+
+.py-text {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

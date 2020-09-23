@@ -65,7 +65,7 @@ class Home extends React.Component<{}, HomeState> {
                 <img
                   src="https://s2.wp.com/wp-content/plugins/amp-1.4/assets/images/amp-page-fallback-wordpress-publisher-logo.png"
                   alt="logo"
-                  height="80px"
+                  height="47px"
                 />
               </IonCol>
             </IonRow>
