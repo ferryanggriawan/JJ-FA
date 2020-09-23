@@ -8,15 +8,15 @@ import {
 import React, { Component } from "react"
 import sliderApi from "../../api/slider.api"
 
-const imageSlideOpts = {
-  initialSlide: 0,
-  speed: 400,
-}
-
 const sliderData = sliderApi
 
 class HomeSlider extends Component {
   render() {
+    const imageSlideOpts = {
+      initialSlide: 0,
+      speed: 400,
+    }
+
     return (
       <IonSlides className="image-slide" pager={true} options={imageSlideOpts}>
         {sliderData.map((slide, index) => (

@@ -1,14 +1,14 @@
 import React, { Component } from "react"
 import { IonButton, IonCol, IonRow, IonSlide, IonSlides } from "@ionic/react"
 
-const tagSlideOpts = {
-  initialSlide: 0,
-  slidesPerView: 3,
-  speed: 400,
-}
-
 class HomeTagSlider extends Component {
   render() {
+    const tagSlideOpts = {
+      initialSlide: 0,
+      slidesPerView: 3,
+      speed: 400,
+    }
+
     return (
       <IonSlides className="text-slide" pager={false} options={tagSlideOpts}>
         <IonSlide>

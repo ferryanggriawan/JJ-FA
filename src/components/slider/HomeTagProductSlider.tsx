@@ -1,58 +1,44 @@
 import React, { Component } from "react"
-import { IonCol, IonRow, IonSlide, IonSlides } from "@ionic/react"
+import { IonSlide, IonSlides } from "@ionic/react"
 import ItemCard from "../card/ItemCard"
 
-const producSlideOpts = {
-  initialSlide: 0,
-  slidesPerView: 2,
-  speed: 400,
+interface Product {
+  img: string
+  name: string
+  price: string
 }
 
-class HomeTagProductSlider extends Component {
+type HomeTagProductSliderProps = {
+  products: Array<Product>
+}
+
+class HomeTagProductSlider extends Component<HomeTagProductSliderProps> {
   render() {
-    return (
-      <IonSlides
-        className="image-slide-small-space ion-padding-horizontal"
-        pager={false}
-        options={producSlideOpts}
-      >
-        <IonSlide>
-          <ItemCard
-            image="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-            name="Es Teh"
-            harga="Rp 20.000"
-          ></ItemCard>
-        </IonSlide>
-        <IonSlide>
-          <ItemCard
-            image="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-            name="Es Teh"
-            harga="Rp 20.000"
-          ></ItemCard>
-        </IonSlide>
-        <IonSlide>
-          <ItemCard
-            image="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-            name="Es Teh"
-            harga="Rp 20.000"
-          ></ItemCard>
-        </IonSlide>
-        <IonSlide>
-          <ItemCard
-            image="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-            name="Es Teh"
-            harga="Rp 20.000"
-          ></ItemCard>
-        </IonSlide>
-        <IonSlide>
-          <ItemCard
-            image="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
-            name="Es Teh"
-            harga="Rp 20.000"
-          ></ItemCard>
-        </IonSlide>
-      </IonSlides>
-    )
+    if (this.props.products != null) {
+      return (
+        <IonSlides
+          className="image-slide-small-space ion-padding-horizontal"
+          pager={false}
+          options={{
+            nitialSlide: 0,
+            slidesPerView: 2,
+            speed: 400,
+          }}
+        >
+          {this.props.products.map((product, index) => (
+            <IonSlide key={index}>
+              <ItemCard
+                image={product.img}
+                name={product.name}
+                harga={`Rp ${product.price}`}
+              ></ItemCard>
+            </IonSlide>
+          ))}
+        </IonSlides>
+      )
+    } else {
+      return <div></div>
+    }
   }
 }
 

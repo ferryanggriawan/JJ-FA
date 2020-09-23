@@ -66,6 +66,7 @@ ion-slides {
 
 .absolute-button {
   position: absolute;
+  margin-top: 8px;
 }
 
 .icon-button {
@@ -89,4 +90,14 @@ ion-button {
 .container {
   display: block;
   padding: 25px 20px 0 20px;
+}
+
+.swiper-container {
+  padding-bottom: 6px;
+}
+
+.text-word-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

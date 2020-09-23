@@ -16,31 +16,21 @@ import {
   IonToolbar,
   withIonLifeCycle,
 } from "@ionic/react"
+import { notificationsOutline } from "ionicons/icons"
 
 import "./Home.css"
 import featuredProductApi from "../../api/featured-product.api"
-import { notificationsOutline } from "ionicons/icons"
 import HomeSlider from "../../components/slider/HomeSlider"
 import HomeTagSlider from "../../components/slider/HomeTagSlider"
 import HomeTagProductSlider from "../../components/slider/HomeTagProductSlider"
 
 type HomeState = {
-  data: Array<Object>
+  featuredProduct: Array<Object>
 }
 
 class Home extends React.Component<{}, HomeState> {
-  ionViewWillEnter() {
-    const data = featuredProductApi
-    this.setState({ data: data })
-  }
-
-  ionViewWillLeave() {}
-
-  ionViewDidEnter() {}
-
-  ionViewDidLeave() {}
-
   render() {
+    const featuredProduct = featuredProductApi
     return (
       <IonPage>
         <IonHeader className="ion-no-border">
@@ -73,7 +63,7 @@ class Home extends React.Component<{}, HomeState> {
             <IonRow>
               <IonCol className="ion-padding-start">
                 <img
-                  src="https://s.loker.id/uploads/2019/07/kopi-janji-jiwa.png"
+                  src="https://s2.wp.com/wp-content/plugins/amp-1.4/assets/images/amp-page-fallback-wordpress-publisher-logo.png"
                   alt="logo"
                   height="80px"
                 />
@@ -99,7 +89,9 @@ class Home extends React.Component<{}, HomeState> {
               <HomeTagSlider></HomeTagSlider>
             </div>
             <div>
-              <HomeTagProductSlider></HomeTagProductSlider>
+              <HomeTagProductSlider
+                products={featuredProduct}
+              ></HomeTagProductSlider>
             </div>
             <div className="container">
               <IonRow className="ion-align-items-center">
@@ -114,7 +106,9 @@ class Home extends React.Component<{}, HomeState> {
               </IonRow>
             </div>
             <div>
-              <HomeTagProductSlider></HomeTagProductSlider>
+              <HomeTagProductSlider
+                products={featuredProduct}
+              ></HomeTagProductSlider>
             </div>
           </IonGrid>
         </IonContent>

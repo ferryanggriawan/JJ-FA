@@ -24,7 +24,7 @@ class ItemCard extends Component<ItemCardProps> {
       <IonCard className="rounded shadow ion-text-left initial-scroll">
         <IonCardContent className="ion-no-padding">
           <IonImg
-            style={{ width: "100%", height: "140px" }}
+            style={{ width: "100%", height: "100%" }}
             src={this.props.image}
           ></IonImg>
         </IonCardContent>
@@ -32,7 +32,9 @@ class ItemCard extends Component<ItemCardProps> {
           <IonRow>
             <IonCol size="8">
               <IonText color="dark">
-                <b>{this.props.name}</b>
+                <div className="text-word-wrap">
+                  <b>{this.props.name}</b>
+                </div>
               </IonText>
               <IonText>
                 <div className="mt-1">{this.props.harga}</div>
